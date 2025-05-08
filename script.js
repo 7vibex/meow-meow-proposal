@@ -1,34 +1,42 @@
-// Redirects the user to yes_page.html when the "Yes" button is clicked
 function nextPage() {
-    window.location.href = "yes.html";
+    window.location.href = "yes_page.html";
 }
 
-// Moves the "No" button to random positions with fun animations
 function moveButton() {
-    const button = document.getElementById("noButton");
+    const noButton = document.getElementById("noButton");
+    const yesButton = document.getElementById("yesButton");
 
-    // Generate random position within the window's dimensions
-    const randomX = Math.random() * (window.innerWidth - button.clientWidth);
-    const randomY = Math.random() * (window.innerHeight - button.clientHeight);
+    // Disable the button briefly to avoid accidental clicks
+    noButton.disabled = true;
 
-    // Add smooth transition for a fun effect
-    button.style.transition = "all 0.2s ease";
+    let x, y;
 
-    // Apply rotation for a playful effect
-    const randomAngle = Math.random() * 360;
+    // Keep generating positions until the buttons do not overlap
+    do {
+        x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+        y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+    } while (
+        // Check for overlap with the Yes button
+        x < yesButton.offsetLeft + yesButton.clientWidth &&
+        x + noButton.clientWidth > yesButton.offsetLeft &&
+        y < yesButton.offsetTop + yesButton.clientHeight &&
+        y + noButton.clientHeight > yesButton.offsetTop
+    );
 
-    // Set the new position and rotation
-    button.style.position = "absolute";
-    button.style.left = `${randomX}px`;
-    button.style.top = `${randomY}px`;
-    button.style.transform = `rotate(${randomAngle}deg)`;
+    // Update button position
+    noButton.style.position = "absolute";
+    noButton.style.left = `${x}px`;
+    noButton.style.top = `${y}px`;
+
+    // Re-enable the button after a short delay
+    setTimeout(() => {
+        noButton.disabled = false;
+    }, 100); // Adjust delay as needed
 }
 
-// Attach event listeners when the DOM is fully loaded
-window.onload = function() {
+// Attach the moveButton function to both click and touch events for better responsiveness
+document.addEventListener("DOMContentLoaded", () => {
     const noButton = document.getElementById("noButton");
-
-    // Event listeners for both PC (mouseover) and mobile (touchstart)
-    noButton.addEventListener("mouseover", moveButton); // For PC
-    noButton.addEventListener("touchstart", moveButton); // For mobile
-};
+    noButton.addEventListener("mousedown", moveButton);
+    noButton.addEventListener("touchstart", moveButton);
+});
