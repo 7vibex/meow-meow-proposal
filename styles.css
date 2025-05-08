@@ -39,7 +39,7 @@ body {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 250px;
+    gap: 15px;
 }
 
 .btn {
