@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>something random because i dont have any ideas for a title</title>
-    <meta property="og:title" content="Tum Tum Tum Sahur">
-    <meta property="og:image" content="https://tenor.googleapis.com/v2/media?id=17547103808297348431&format=optimizedgif&client_key=tenor_web&appversion=browser-r20250506-2&access_token=ya29.a0AZYkNZgDT-aLU-9AOCOtlCA-W_21NuabO1Gs7vJ3sTwbmpGk1uAzoBhS-BNyQvRKaoi9bAQysbzc_JBg7fXfucd6Co61yecUtOEwPrCAyJGqonZjMobqXtfQLcLVsbU3vqwsjtZ8gZzQL2lO5noTPf6QYmKgJXWgU2cLU3GkaCgYKAT8SARUSFQHGX2Mi4LV6FYzB7_k4a97vpmW2Ww0175&key=AIzaSyC-P6_qz3FzCoXGLk6tgitZo4jEJ5mLzD8">
+    <title>Karina Question</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="meow meow meow 2 ">
+    <meta property="og:image" content="https://media1.tenor.com/m/-sK8N5GoQT4AAAAC/polska-gurom-poland-rah.gif">
     <meta property="og:url" content="https://karinaaaaaaaaa.netlify.app/">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -12,10 +14,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio id="bgMusic" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
     <div class="container">
         <h1 class="header_text">Karina, Do You Wanna Be My Girlfriend?</h1>
         <div class="gif_container">
-            <img src="https://media.tenor.com/eX1d6fukpNQAAAAj/begging-cat-cat.gif" alt="Cute Capoo GIF">
+            <img src="https://media.tenor.com/aH6qp6K6lO4AAAAj/apple-apple-cat.gif" alt="Cute Cat">
         </div>
         <div class="buttons">
             <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
@@ -23,59 +30,9 @@
         </div>
     </div>
 
-    <script>
-        function nextPage() {
-            window.location.href = "yes.html";
-        }
+    <!-- Heart Rain -->
+    <div id="heart-container"></div>
 
-        function moveButton() {
-            const noButton = document.getElementById("noButton");
-            const yesButton = document.getElementById("yesButton");
-
-            noButton.disabled = true;
-
-            let x, y;
-            do {
-                x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
-                y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
-            } while (
-                x < yesButton.offsetLeft + yesButton.clientWidth &&
-                x + noButton.clientWidth > yesButton.offsetLeft &&
-                y < yesButton.offsetTop + yesButton.clientHeight &&
-                y + noButton.clientHeight > yesButton.offsetTop
-            );
-
-            noButton.style.position = "absolute";
-            noButton.style.left = `${x}px`;
-            noButton.style.top = `${y}px`;
-
-            setTimeout(() => {
-                noButton.disabled = false;
-            }, 100);
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const noButton = document.getElementById("noButton");
-            noButton.addEventListener("mousedown", moveButton);
-            noButton.addEventListener("touchstart", moveButton);
-        });
-
-        // 💖 Heart Rain Effect
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'falling-heart';
-            heart.textContent = '💖';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = 2 + Math.random() * 3 + 's';
-            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-
-        setInterval(createHeart, 300);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
