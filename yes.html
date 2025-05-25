@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./yes_style.css">
-    </head> 
-    <body>
-        <div class="container">
-            <div>
-                <h1 class="header_text">YAYYYYYYYY!</h1>
-            </div>
-            <div class="gif_container">
-                <img src="https://media.tenor.com/gP0009R3r7UAAAAi/peach-goma-peach-and-goma.gif">
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <title>YAY</title>
+    <link rel="stylesheet" href="yes_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text">YAYYYYYYYY!</h1>
+        <div class="gif_container">
+            <img src="https://media.tenor.com/u56nhKZD24AAAAAi/catkiss-cat.gif">
         </div>
-    </body> 
+    </div>
+
+    <script>
+        // Confetti explosion on load
+        for (let i = 0; i < 150; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDelay = Math.random() + 's';
+            document.body.appendChild(confetti);
+        }
+    </script>
+</body>
 </html>
