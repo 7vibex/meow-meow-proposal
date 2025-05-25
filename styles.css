@@ -99,3 +99,21 @@ body {
     background-color: #ff6b81;
     border-radius: 50%;
 }
+
+/* 💖 Falling Heart Animation */
+.falling-heart {
+    position: fixed;
+    top: -20px;
+    color: #ff6b81;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
