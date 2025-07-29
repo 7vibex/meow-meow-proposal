@@ -12,7 +12,7 @@ A cute, heartfelt, and playful webpage that asks one special question:
 - Animated floating hearts for a dreamy effect
 - "Yes" and "No" button logic:
   - “Yes” leads to a sweet surprise
-  - “No” If she will press it the button will appear in a random location or it will disappear 
+  - “No” when she will press it, the button will appear in a random location or it will disappear (so she cant click it:))
 - Responsive design that works on phones and desktops
 
 ---
