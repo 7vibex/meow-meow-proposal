@@ -3,7 +3,7 @@
 A cute, heartfelt, and playful webpage that asks one special question:  
 (If she wants to be ur gf)
 
-(if u wantot u can use antoher verison i created that is callled "yes_page.html")_
+(if u want  u can use antoher verison i created that is callled "yes_page.html" istead of "yes.html" )_
 
 ## 💡 What It Does
 
